@@ -1,0 +1,15 @@
+package br.com.fiap.locatech.locatech.repositories;
+
+import br.com.fiap.locatech.locatech.entities.Pessoa;
+import br.com.fiap.locatech.locatech.entities.Veiculo;
+
+import java.util.List;
+import java.util.Optional;
+
+public interface PessoaRepository {
+    Optional<Pessoa> findByid(Long id);
+    List<Pessoa> findAll(int size, int offset);
+    Integer save(Pessoa pessoa);
+    Integer update(Pessoa pessoa, Long id);
+    Integer delete(Long id);
+}
