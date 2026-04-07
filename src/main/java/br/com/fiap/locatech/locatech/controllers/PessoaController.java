@@ -46,7 +46,7 @@ public class PessoaController {
     public ResponseEntity<Void> savePessoa(
             @RequestBody Pessoa pessoa
     ){
-        logger.info("POST -> /Pessoa");
+        logger.info("POST -> /pessoas");
         pessoaService.savePessoa(pessoa);
         return ResponseEntity.status(201).build();
     }
@@ -56,7 +56,7 @@ public class PessoaController {
             @PathVariable("id") long id,
             @RequestBody Pessoa pessoa
     ){
-        logger.info("PUT -> /pessoa/" + id);
+        logger.info("PUT -> /pessoas/" + id);
         pessoaService.updatePessoa(pessoa, id);
         var status = HttpStatus.NO_CONTENT;
         return ResponseEntity.status(status.value()).build();
@@ -66,7 +66,7 @@ public class PessoaController {
     public ResponseEntity<Void> deleteVeiculo(
             @PathVariable("id") long id
     ){
-        logger.info("DELETE -> /veiculo/" + id);
+        logger.info("DELETE -> /pessoas/" + id);
         pessoaService.delete(id);
         return ResponseEntity.ok().build();
     }
